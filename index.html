@@ -187,17 +187,8 @@ risk of photosensitive epileptic seizes</b>.</p>
 
             let hasClicked;
 
-            window.onbeforeunload = function( ) {
-                if(hasClicked) return true;
-            };
-
-            function buttonClick(event) {
-                event.preventDefault();
-                if(!hasClicked) hasClicked = true;
-                overlay.hidden = true;
-                video.play();
-                videoClick();
-            }
+            video.play();
+            videoClick();
 
             function videoClick(event) {
                 if(event) event.preventDefault();
@@ -208,9 +199,6 @@ risk of photosensitive epileptic seizes</b>.</p>
                 else if(documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
                 else if(documentElement.msRequestFullscreen) documentElement.msRequestFullscreen();
             }
-
-            acceptButton.addEventListener("click", buttonClick);
-            declineButton.addEventListener("click", buttonClick);
             video.addEventListener("click", videoClick);
         </script>
 </body>
